@@ -1,6 +1,7 @@
 import React from "react";
+import "./ListaTodos.css";
 
-function ListaPeticiones(props) {
+function ListaTodos(props) {
   return (
     <section>
       <ul>{props.children}</ul>
@@ -8,4 +9,4 @@ function ListaPeticiones(props) {
   );
 }
 
-export { ListaPeticiones };
+export { ListaTodos };
