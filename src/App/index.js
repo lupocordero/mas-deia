@@ -1,10 +1,6 @@
 //import './App.css';
 import React from "react";
-import { ContadorTodo } from "./ContadorTodo";
-import { BusquedaTodo } from "./BusquedaTodo";
-import { ListaTodos } from "./ListaTodos";
-import { Todo } from "./Todo";
-import { BotonTodo } from "./BotonTodo";
+import { AppUI } from "./AppUI";
 
 const defaulttodos = [
   { text: "Recojer cacas de perro", completed: false },
@@ -45,22 +41,15 @@ function App() {
   };
 
   return (
-    <>
-      <ContadorTodo total={totalTodos} completed={completedTodos} />
-      <BusquedaTodo searchValue={searchValue} setSearchValue={setSearchValue} />
-      <ListaTodos>
-        {searchedTodos.map((todo) => (
-          <Todo
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </ListaTodos>
-      <BotonTodo />
-    </>
+    <AppUI
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 }
 
