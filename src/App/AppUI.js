@@ -1,24 +1,23 @@
 import React from "react";
+import { TodoContext } from "../TodoContext";
 import { ContadorTodo } from "../ContadorTodo";
 import { BusquedaTodo } from "../BusquedaTodo";
 import { ListaTodos } from "../ListaTodos";
 import { Todo } from "../Todo";
 import { BotonTodo } from "../BotonTodo";
 
-function AppUI({
-  totalTodos,
-  completedTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodo,
-  deleteTodo,
-}) {
+function AppUI() {
+  const { error, loading, searchedTodos, completeTodo, deleteTodo } =
+    React.useContext(TodoContext);
+
   return (
     <>
-      <ContadorTodo total={totalTodos} completed={completedTodos} />
-      <BusquedaTodo searchValue={searchValue} setSearchValue={setSearchValue} />
+      <ContadorTodo />
+      <BusquedaTodo />
       <ListaTodos>
+        {error && <p>Error</p>}
+        {loading && <p>Cargando...</p>}
+        {!loading && !searchedTodos.length && <p>Crea tu primera tarea</p>}
         {searchedTodos.map((todo) => (
           <Todo
             key={todo.text}
