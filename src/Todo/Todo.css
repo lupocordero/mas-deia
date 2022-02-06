@@ -1,11 +1,14 @@
 .Item {
-    background-color: #FAFAFA;
+    color: rgb(41, 41, 41);
+    background-color: #eeeeee;
     position: relative;
+    width: 35vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    border-radius: 16px;
   }
   
   .Item-p {
@@ -36,7 +39,7 @@
     left: 12px;
   }
   .Icon-check--active {
-    color: #4caf50;
+    color: #26b12a;
   }
   
   .Icon-delete {
@@ -45,5 +48,5 @@
     right: 0;
   }
   .Icon-delete:hover {
-    color: red;
+    color: rgb(216, 48, 48);
   }

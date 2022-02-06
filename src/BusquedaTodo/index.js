@@ -11,7 +11,7 @@ function BusquedaTodo() {
   return (
     <input
       className="TodoSearch"
-      placeholder="añada tarea"
+      placeholder="...search To-Dos"
       onChange={onSearchValue}
       value={searchValue}
     />
